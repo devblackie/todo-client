@@ -7,6 +7,7 @@ const NavBar = () =>{
             <ul className='navBar'>
                 <li><Link to="/">Todo-List</Link></li>
                 <li><Link to="/todo-form">Todo-Form</Link></li>
+                <li><Link to="/todo-item">Todo-Form</Link></li>
             </ul>
         </>
     )

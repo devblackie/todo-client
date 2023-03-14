@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route exact path='' element={<TodoHome/>}/>
         <Route exact path='/todo-form' element={<TodoForm/>}/>
-        <Route exact path='/todo-item' element={<TodoItem/>}/>
+        <Route exact path='/todo-item' element={<TodoList/>}/>
       </Routes>
     </Router>
   );
