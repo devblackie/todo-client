@@ -18,7 +18,7 @@ function TodoList() {
   return (
     <div>
       <h2>Todo List</h2>
-      <ul>
+      <ul className='lister'>
         {todos.map(todo => (
           <li key={todo.id}>
             {todo.title} - {todo.description}
