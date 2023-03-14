@@ -2,7 +2,7 @@
     margin: 5px;
     text-align: center;
     align-items: center;
-    border-radius: .5rem;
+    /* border-radius: .5rem; */
     /* background-color: rgba(0,0,0,.5); */
     
 }
@@ -16,7 +16,7 @@ table{
   margin-bottom: 10px;
   border-radius: .5rem;
   box-shadow: 0 0 1rem #ccc;
-  width: 100%;
+  width: 97%;
 }
 thead{
   background: white;
