@@ -15,7 +15,14 @@ function TodoList() {
       });
   }, []);
 
-
+  const deleteTodo = (id) =>{
+    axios.delete(`${baseurl}/todo_items/${id}`)
+    .then((response)=>{
+      window.location.reload()
+    }).catch(error=>{
+      console.log(error)
+    })
+  }
 
   return (
     <div className='table'>
@@ -40,7 +47,7 @@ function TodoList() {
                 <button>Edit</button>
               </td>
               <td>
-                <button>Delete</button>
+                <button onClick={() => deleteTodo(todo.id)}>Delete</button>
 
               </td>
             </tr>)}
