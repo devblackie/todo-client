@@ -18,7 +18,7 @@ function TodoList() {
 
 
   return (
-    <div>
+    <div className='table'>
       <h2>Todo List</h2>
       <table>
         <thead>
@@ -33,9 +33,9 @@ function TodoList() {
         <tbody>
           {todos.map(todo =>
             <tr key={todo.id}>
-              <td align='left'>{todo.id}</td>
-              <td align='left'>{todo.title}</td>
-              <td align='left'>{todo.description}</td>
+              <td>{todo.id}</td>
+              <td>{todo.title}</td>
+              <td>{todo.description}</td>
               <td>
                 <button>Edit</button>
               </td>

@@ -6,13 +6,30 @@
     /* background-color: rgba(0,0,0,.5); */
     
 }
-ul{
-  display: block;
-  
+.table{
+  text-align: center;
 }
-.lister{
-  display:block
+table{
+  padding: 10px;
+  margin: .5rem;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: .5rem;
+  box-shadow: 0 0 1rem #ccc;
+  width: 100%;
 }
+thead{
+  background: white;
+  padding: 2rem;
+}
+tbody tr:hover{
+  background-color: #ccc;
+}
+tbody tr td button{
+  color: #000;
+  background-color: #ccc;
+}
+
 .naV{
   display: flex;
   background: rgba(0,0,0,.5);
