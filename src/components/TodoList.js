@@ -15,16 +15,44 @@ function TodoList() {
       });
   }, []);
 
+
+
   return (
     <div>
       <h2>Todo List</h2>
-      <ul className='lister'>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {todos.map(todo =>
+            <tr key={todo.id}>
+              <td align='left'>{todo.id}</td>
+              <td align='left'>{todo.title}</td>
+              <td align='left'>{todo.description}</td>
+              <td>
+                <button>Edit</button>
+              </td>
+              <td>
+                <button>Delete</button>
+
+              </td>
+            </tr>)}
+        </tbody>
+      </table>
+      {/* <ul className='lister'>
         {todos.map(todo => (
           <li key={todo.id}>
             {todo.title} - {todo.description}
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
