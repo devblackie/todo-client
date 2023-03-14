@@ -1,38 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TodoList from './components/TodoList';
+import TodoHome from './components/TodoHome';
+import TodoForm from './components/TodoForm';
+import TodoItem from './components/TodoItem';
+import NavBar from './components/NavBar';
 
 
 function App() {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    axios.get('/todos/')
-      .then(response => {
-        setTodos(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
-
-  const handleCreateTodo = newTodo => {
-    setTodos([...todos, newTodo]);
-  };
-
-  const handleUpdateTodo = updatedTodo => {
-    setTodos(todos.map(todo => todo.id === updatedTodo.id ? updatedTodo : todo));
-  };
-
-  const handleDeleteTodo = todoId => {
-    setTodos(todos.filter(todo => todo.id !== todoId));
-  };
-
   return (
-    <div>
-      <h1>Todo List</h1>
-      <TodoList todos={todos} onCreateTodo={handleCreateTodo} onUpdateTodo={handleUpdateTodo} onDeleteTodo={handleDeleteTodo} />
-    </div>
+    <Router className="App">
+      <NavBar/>
+      <Routes>
+        <Route exact path='' element={<TodoHome/>}/>
+        <Route exact path='/todo-form' element={<TodoForm/>}/>
+        <Route exact path='/todo-item' element={<TodoItem/>}/>
+      </Routes>
+    </Router>
   );
 }
 

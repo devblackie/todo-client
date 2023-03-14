@@ -4,11 +4,13 @@ import axios from 'axios';
 function TodoForm({ onAddTodo }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const baseurl = 'http://127.0.0.1:8000'
+
 
   const handleSubmit = event => {
     event.preventDefault();
 
-    axios.post('/todos/', { title, description })
+    axios.post(`${baseurl}/todos/`, { title, description })
       .then(response => {
         onAddTodo(response.data);
         setTitle('');

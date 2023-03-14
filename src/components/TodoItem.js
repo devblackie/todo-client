@@ -5,9 +5,10 @@ function TodoItem({ todo, onUpdateTodo, onDeleteTodo }) {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState(todo.title);
   const [description, setDescription] = useState(todo.description);
+  const baseurl = 'http://127.0.0.1:8000'
 
   const handleUpdate = () => {
-    axios.put(`/todos/${todo.id}/`, { title, description })
+    axios.put(`${baseurl}/todos/${todo.id}/`, { title, description })
       .then(response => {
         onUpdateTodo(response.data);
         setIsEditing(false);
