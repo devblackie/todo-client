@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './set.css'
 import axios from 'axios';
 
 function TodoForm({ onAddTodo }) {
@@ -23,18 +24,20 @@ function TodoForm({ onAddTodo }) {
 
   return (
     <div>
-      <h2>Add Todo</h2>
+    <div className='add'>
+      <h2>Add New To Do</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Title:</label>
           <input type="text" value={title} onChange={event => setTitle(event.target.value)} />
         </div>
         <div>
-          <label>Description:</label>
+          <label>Description</label>
           <input type="text" value={description} onChange={event => setDescription(event.target.value)} />
         </div>
         <button type="submit">Add</button>
       </form>
+    </div>
     </div>
   );
 }

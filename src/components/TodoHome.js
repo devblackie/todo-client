@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './set.css'
 import TodoList from './TodoList';
 
 function TodoHome() {
@@ -29,8 +30,7 @@ function TodoHome() {
   };
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className='home'>
       <TodoList todos={todos} onCreateTodo={handleCreateTodo} onUpdateTodo={handleUpdateTodo} onDeleteTodo={handleDeleteTodo} />
     </div>
   );
